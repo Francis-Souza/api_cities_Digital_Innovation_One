@@ -26,9 +26,54 @@ mvn spring-boot:run
 Após executar o comando acima, basta apenas abrir o seguinte endereço e visualizar a execução do projeto:
 
 ```
-http://localhost:8080/api/v1/cities
+============  Country  =============
+https://localhost:8080/api/v1/countries
+https://localhost:8080/api/v1/countries/id
+https://localhost:8080/api/v1/countries/filterLike/name
+https://localhost:8080/api/v1/countries/filterCustomImpl/name
+https://localhost:8080/api/v1/countries/filterCustom/name
+```
+```
+============  State  =============
+https://localhost:8080/api/v1/states
+https://localhost:8080/api/v1/states/id
+https://localhost:8080/api/v1/states/filter/name
+https://localhost:8080/api/v1/states/filterCustom/name
+```
+```
+============  Cities  =============
+https://localhost:8080/api/v1/cities
+https://localhost:8080/api/v1/cities/id
+https://localhost:8080/api/v1/cities/filterLike/name
+https://localhost:8080/api/v1/cities/filterCustomImpl/name
+https://localhost:8080/api/v1/cities/filterCustom/name
 ```
 
+Para testar a API via WEB, basta apenas abrir os seguintes endereços e visualizar a execução do projeto:
+
+```
+============  Country  =============
+https://citiesapi-dg-one.herokuapp.com/api/v1/countries
+https://citiesapi-dg-one.herokuapp.com/api/v1/countries/id
+https://citiesapi-dg-one.herokuapp.com/api/v1/countries/filterLike/name
+https://citiesapi-dg-one.herokuapp.com/api/v1/countries/filterCustomImpl/name
+https://citiesapi-dg-one.herokuapp.com/api/v1/countries/filterCustom/name
+```
+```
+============  State  =============
+https://citiesapi-dg-one.herokuapp.com/api/v1/states
+https://citiesapi-dg-one.herokuapp.com/api/v1/states/id
+https://citiesapi-dg-one.herokuapp.com/api/v1/states/filter/name
+https://citiesapi-dg-one.herokuapp.com/api/v1/states/filterCustom/name
+```
+```
+============  Cities  =============
+https://citiesapi-dg-one.herokuapp.com/api/v1/cities
+https://citiesapi-dg-one.herokuapp.com/api/v1/cities/id
+https://citiesapi-dg-one.herokuapp.com/api/v1/cities/filterLike/name
+https://citiesapi-dg-one.herokuapp.com/api/v1/cities/filterCustomImpl/name
+https://citiesapi-dg-one.herokuapp.com/api/v1/cities/filterCustom/name
+```
 
 São necessários os seguintes pré-requisitos para a execução do projeto desenvolvido durante a aula:
 
