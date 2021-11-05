@@ -39,5 +39,18 @@ public class StateResource {
 		return ResponseEntity.ok(state);
 	}
 	
+	/*
+	 * Metódo com implementação utilizando Example do JPA
+	 * Busca por Id e Nome 
+	 */
+	@GetMapping("/api/v1/states/filterCustom/{name}")
+	public ResponseEntity<List<State>> findByCustom(
+			@RequestParam(value = "id", required = false) Long id,
+			@RequestParam(value = "name", required = false) String name) {
+
+		List<State> obj = stateService.findByCustom(id, name);
+		return ResponseEntity.ok().body(obj);
+	}
+	
 
 }

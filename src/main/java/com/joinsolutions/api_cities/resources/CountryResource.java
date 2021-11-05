@@ -27,14 +27,14 @@ public class CountryResource {
 	}
 
 
-	@GetMapping(value = "/api/v1/{id}")
+	@GetMapping(value = "/api/v1/countries/{id}")
 	public ResponseEntity<Country> findById(@PathVariable Long id) {
 
 		Country obj = countryService.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 
-	@GetMapping("/api/v1/filterLike/{name}")
+	@GetMapping("/api/v1/countries/filterLike/{name}")
 	public ResponseEntity<List<Country>> findByName(@RequestParam("name") String name) {
 		List<Country> obj = countryService.findByName(name);
 		return ResponseEntity.ok().body(obj);
@@ -44,7 +44,7 @@ public class CountryResource {
 	 * Metódo com implementação personalizado de busca 
 	 * por Id e nome * 
 	 */
-	@GetMapping("/api/v1/filterCustomImpl/{name}")
+	@GetMapping("/api/v1/countries/filterCustomImpl/{name}")
 	public ResponseEntity<List<Country>> findByCustomImpl(
 			@RequestParam(value = "id", required = false) Long id,
 			@RequestParam(value = "nome", required = false) String nome) {
@@ -57,7 +57,7 @@ public class CountryResource {
 	 * Metódo com implementação utilizando Example do JPA
 	 * Busca por Id e Nome 
 	 */
-	@GetMapping("/api/v1/filterCustom/{name}")
+	@GetMapping("/api/v1/countries/filterCustom/{name}")
 	public ResponseEntity<List<Country>> findByCustom(
 			@RequestParam(value = "id", required = false) Long id,
 			@RequestParam(value = "nome", required = false) String nome) {
@@ -65,10 +65,6 @@ public class CountryResource {
 		List<Country> obj = countryService.findByCustom(id, nome);
 		return ResponseEntity.ok().body(obj);
 	}
-	
-	
-	
-	
 
 
 }

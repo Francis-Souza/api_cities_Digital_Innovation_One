@@ -8,6 +8,5 @@ import com.joinsolutions.api_cities.entities.Country;
 public interface CountryRepository extends JpaRepository<Country, Long> {
 
 	List<Country>findByNameContains(String name);
-	
 
 }
