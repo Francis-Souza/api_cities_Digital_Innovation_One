@@ -1,8 +1,8 @@
 package com.joinsolutions.api_cities.repositories;
 
 /*
- * Classe com implementação personalizada de busca 
- * por Id e nome * 
+ * Classe com implementação personalizada 
+ * Busca por Id e nome 
  */
 
 import java.util.List;

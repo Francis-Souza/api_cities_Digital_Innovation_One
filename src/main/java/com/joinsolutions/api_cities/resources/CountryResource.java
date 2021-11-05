@@ -52,8 +52,7 @@ public class CountryResource {
 		List<Country> obj = countryService.findByCustomImpl(id, nome);
 		return ResponseEntity.ok().body(obj);
 	}
-	
-	
+		
 	/*
 	 * Metódo com implementação utilizando Example do JPA
 	 * Busca por Id e Nome 
