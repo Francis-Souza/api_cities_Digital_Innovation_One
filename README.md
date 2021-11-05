@@ -4,7 +4,7 @@
 
 <h2>Digital Innovation One - Desenvolvendo um Sistema de Listagem das Cidades do Brasil com Spring Boot API Rest</h2>
 
-<img src="http://img.shields.io/static/v1?label=STATUS&message=EM DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+<img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
 <h3>DESCRIÇÃO DO PROJETO</h3>
 Pequeno sistema para o listagem de cidades do brasil através de API REST criada com o Spring Boot.
 
