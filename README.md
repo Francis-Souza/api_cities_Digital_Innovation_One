@@ -2,7 +2,7 @@
 
 
 
-<h2>Digital Innovation One - Desenvolvendo um Sistema de Listagem das Cidades do Brasil com Spring Boot API Rest</h2>
+<h2>Digital Innovation One - Desenvolvendo um Sistema de Listagem das Cidades com Spring Boot API Rest</h2>
 
 <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
 <h3>DESCRIÇÃO DO PROJETO</h3>
@@ -15,6 +15,8 @@ Durante a sessão, serão desenvolvidos e abordados os seguintes tópicos:
 * Desenvolvimento de operações de gerenciamento de Pais, Estados e Cidades ( leitura com diversas opções de busca de cidades do brasil).
 * Relação de cada uma das operações acima com o padrão arquitetural REST, e a explicação de cada um dos conceitos REST envolvidos durante o desenvolvimento do projeto.
 * Desenvolvimento de testes unitários para validação das funcionalidades
+* Cálculo de distância entre cidades passadas como parâmentro
+* Diversas opções de buscas nas Entidades ( Country, State e City )
 * Implantação do sistema na nuvem através do Heroku
 
 Para executar o projeto no terminal, digite o seguinte comando:
@@ -74,6 +76,17 @@ https://citiesapi-dg-one.herokuapp.com/api/v1/cities/filterLike/name
 https://citiesapi-dg-one.herokuapp.com/api/v1/cities/filterCustomImpl/name
 https://citiesapi-dg-one.herokuapp.com/api/v1/cities/filterCustom/name
 ```
+
+```
+============  Cáclculo de Distância  =============
+https://citiesapi-dg-one.herokuapp.com/api/v1/distances/by-points
+
+```
+## DataBase Postgres
+
+* [Script SQL](https://github.com/chinnonsantos/sql-paises-estados-cidades/tree/master/PostgreSQL)
+
+
 
 São necessários os seguintes pré-requisitos para a execução do projeto desenvolvido durante a aula:
 

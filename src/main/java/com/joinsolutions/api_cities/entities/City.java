@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.data.geo.Point;
+
 @Entity
 @Table(name = "cidade")
 public class City implements Serializable {
@@ -35,8 +37,13 @@ public class City implements Serializable {
 	@NotNull
 	private Integer codIbge;
 	
-	@NotNull
-	private String lat_lon;
+	
+
+	@Column(name = "lat_lon", updatable = false, insertable = false)
+	private String geolocation;
+	
+	@NotNull	
+	private Point lat_lon;
 	
 	@NotNull
 	private Double latitude;
@@ -51,7 +58,7 @@ public class City implements Serializable {
 		
 	}
 
-	public City(Long id, @NotNull String name, @NotNull State state, @NotNull Integer codIbge, @NotNull String lat_lon,
+	public City(Long id, @NotNull String name, @NotNull State state, @NotNull Integer codIbge, @NotNull Point lat_lon,
 			@NotNull Double latitude, @NotNull Double longitude, @NotNull Integer cod_tom) {
 		super();
 		this.id = id;
@@ -96,11 +103,11 @@ public class City implements Serializable {
 		this.codIbge = codIbge;
 	}
 
-	public String getLat_lon() {
+	public Point getLat_lon() {
 		return lat_lon;
 	}
 
-	public void setLat_long(String lat_lon) {
+	public void setLat_long(Point lat_lon) {
 		this.lat_lon = lat_lon;
 	}
 
@@ -126,6 +133,11 @@ public class City implements Serializable {
 
 	public void setCod_tom(Integer cod_tom) {
 		this.cod_tom = cod_tom;
+	}
+	
+
+	public String getGeolocation() {
+		return geolocation;
 	}
 
 	@Override
