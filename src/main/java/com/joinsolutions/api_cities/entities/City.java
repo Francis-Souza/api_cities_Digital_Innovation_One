@@ -12,10 +12,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.annotations.TypeDefs;
 import org.springframework.data.geo.Point;
 
 @Entity
 @Table(name = "cidade")
+@TypeDefs(value = {
+	    @TypeDef(name = "point", typeClass = PointType.class)
+	})
 public class City implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -37,12 +43,11 @@ public class City implements Serializable {
 	@NotNull
 	private Integer codIbge;
 	
-	
-
-	@Column(name = "lat_lon", updatable = false, insertable = false)
+	@Column(name = "lat_lon")
 	private String geolocation;
 	
-	@NotNull	
+	@Type(type = "point")
+	@Column(name = "lat_lon", updatable = false, insertable = false)
 	private Point lat_lon;
 	
 	@NotNull
@@ -58,87 +63,132 @@ public class City implements Serializable {
 		
 	}
 
-	public City(Long id, @NotNull String name, @NotNull State state, @NotNull Integer codIbge, @NotNull Point lat_lon,
-			@NotNull Double latitude, @NotNull Double longitude, @NotNull Integer cod_tom) {
+	
+
+	public City(Long id, @NotNull String name, @NotNull State state, @NotNull Integer codIbge, String geolocation,
+			@NotNull Point lat_lon, @NotNull Double latitude, @NotNull Double longitude, @NotNull Integer cod_tom) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.state = state;
 		this.codIbge = codIbge;
+		this.geolocation = geolocation;
 		this.lat_lon = lat_lon;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.cod_tom = cod_tom;
 	}
 
+
+
+	
 	public Long getId() {
 		return id;
 	}
+
+
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+
+
 	public String getName() {
 		return name;
 	}
+
+
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+
+
 	public State getState() {
 		return state;
 	}
+
+
 
 	public void setState(State state) {
 		this.state = state;
 	}
 
+
+
 	public Integer getCodIbge() {
 		return codIbge;
 	}
+
+
 
 	public void setCodIbge(Integer codIbge) {
 		this.codIbge = codIbge;
 	}
 
+
+
+	public String getGeolocation() {
+		return geolocation;
+	}
+
+
+
+	public void setGeolocation(String geolocation) {
+		this.geolocation = geolocation;
+	}
+
+
+
 	public Point getLat_lon() {
 		return lat_lon;
 	}
 
-	public void setLat_long(Point lat_lon) {
+
+
+	public void setLat_lon(Point lat_lon) {
 		this.lat_lon = lat_lon;
 	}
+
+
 
 	public Double getLatitude() {
 		return latitude;
 	}
 
+
+
 	public void setLatitude(Double latitude) {
 		this.latitude = latitude;
 	}
+
+
 
 	public Double getLongitude() {
 		return longitude;
 	}
 
+
+
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
+
+
 
 	public Integer getCod_tom() {
 		return cod_tom;
 	}
 
+
+
 	public void setCod_tom(Integer cod_tom) {
 		this.cod_tom = cod_tom;
 	}
-	
 
-	public String getGeolocation() {
-		return geolocation;
-	}
+
 
 	@Override
 	public int hashCode() {
