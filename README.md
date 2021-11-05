@@ -6,7 +6,7 @@
 
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 <h3>DESCRIÇÃO DO PROJETO</h3>
-Pequeno sistema para o listagem de cidades do brasil através de uma API REST, criada com o Spring Boot.
+Pequeno sistema para o listagem de cidades do brasil através de API REST criada com o Spring Boot.
 
 Durante a sessão, serão desenvolvidos e abordados os seguintes tópicos:
 
@@ -26,7 +26,7 @@ mvn spring-boot:run
 Após executar o comando acima, basta apenas abrir o seguinte endereço e visualizar a execução do projeto:
 
 ```
-http://localhost:8080/cities
+http://localhost:8080/api/v1/cities
 ```
 
 

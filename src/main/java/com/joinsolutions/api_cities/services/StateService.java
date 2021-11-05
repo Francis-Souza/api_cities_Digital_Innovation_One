@@ -22,8 +22,8 @@ public class StateService {
 		return stateRepository.findAll(); 
 	}
 	
-	public Optional<State> findByName(String name) {
-        return Optional.of(stateRepository.findByName(name).orElseThrow(()-> new ResourceNotFoundException(name)));
+	public List<State> findByName(String name) {
+        return stateRepository.findByNameContains(name);
     }
 
 	

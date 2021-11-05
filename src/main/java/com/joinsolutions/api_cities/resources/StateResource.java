@@ -1,45 +1,41 @@
 package com.joinsolutions.api_cities.resources;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.joinsolutions.api_cities.entities.State;
 import com.joinsolutions.api_cities.services.StateService;
 
 @RestController
-@RequestMapping("/states")
+@RequestMapping("/")
 public class StateResource {
 
 	@Autowired
 	private StateService stateService;
 
-	@GetMapping
+	@GetMapping("/api/v1/states")
 	public ResponseEntity<List<State>> finAll() {
 		List<State> list = stateService.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 
-
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/api/v1/states/{id}")
 	public ResponseEntity<State> findById(@PathVariable Long id) {
 
 		State obj = stateService.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
-	@GetMapping("/nameState/{name}")
-	public ResponseEntity<?> getState(@PathVariable String name) {
-		Optional<?> state = stateService.findByName(name);
-		if (!state.isPresent()) {
-			return ResponseEntity.badRequest().build();
-		}
+	@GetMapping("/api/v1/states/filter/{name}")
+	public ResponseEntity<List<State>> findByName(@RequestParam String name) {
+		List<State> state = stateService.findByName(name);
 		return ResponseEntity.ok(state);
 	}
 	
