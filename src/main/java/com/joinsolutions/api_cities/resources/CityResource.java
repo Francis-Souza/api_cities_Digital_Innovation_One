@@ -17,6 +17,7 @@ import com.joinsolutions.api_cities.services.CityService;
 @RequestMapping("/")
 public class CityResource {
 	
+	
 
 	@Autowired
 	private CityService cityService;
@@ -26,7 +27,7 @@ public class CityResource {
 		List<City> list = cityService.findAll();
 		return ResponseEntity.ok().body(list);
 	}
-
+	
 
 	@GetMapping(value = "/api/v1/cities/{id}")
 	public ResponseEntity<City> findById(@PathVariable Long id) {
