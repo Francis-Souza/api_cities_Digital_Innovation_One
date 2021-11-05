@@ -16,6 +16,7 @@ import com.joinsolutions.api_cities.services.CityService;
 @RestController
 @RequestMapping("/")
 public class CityResource {
+	
 
 	@Autowired
 	private CityService cityService;
